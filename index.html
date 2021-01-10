@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+　<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="style.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js" defer>
+
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>PORTFOLIO</h1>
+      <ul>
+        <li><a class="scroll-btn" href="#about">ABOUT</a></li>
+        <li><a class="scroll-btn" href="#skill">SKILL</a></li>
+        <li><a class="scroll-btn" href="#question">Q&A</a></li>
+        <li><a class="scroll-btn" href="#contact">CONTACT</a></li>
+      </ul>
+      <a id="nav-btn"><i class="fas fa-bars fa-2x"></i> </a>
+    </div>
+  </header>
+  <ul class="phone-nav" id="phone-nav">
+    <li><a class="scroll-btn" href="#about">ABOUT</a></li>
+    <li><a class="scroll-btn" href="#skill">SKILL</a></li>
+    <li><a class="scroll-btn" href="#question">Q&A</a></li>
+    <li><a class="scroll-btn" href="#contact">CONTACT</a></li>
+  </ul>
+  <div class="top"></div>
+  <div class="about" id="about">
+    <h2>ABOUT</h2>
+    <p>自己紹介</p>
+    <div class="profile">
+      <div class="about-img"></div>
+      <p>
+        まるる/21歳/男<br>
+        長崎県出身で現在は東京済み。 <br>
+        まずはコーダーとして活動を目指す。 <br>
+        将来的にフロントエンドエンジニアを目指し、JavaScript等を日々学習中。
+      </p>
+    </div>
+
+  </div>
+  <div class="skill" id="skill">
+    <h2>SKILL</h2>
+    <p>未経験ですが、頑張ります！</p>
+    <div class="skills">
+      <div class="skill-content">
+        <h3>HTML&CSS</h3>
+        <p>
+          レスポンシブ対応可能で、デザインを再現度100％でコーディング致します。 <br>
+          コーディングには自信がありますので、お気軽にご依頼ください。
+        </p>
+      </div>
+      <div class="skill-content">
+        <h3>Javascript</h3>
+        <p>
+          Jqueryを用いたアニメーション実装をいたします。 <br>
+          スライダーやアコーディオン等簡単なものは、追加料金なしで対応いたします。 <br>
+          その他につきましては、ご相談ください。
+        </p>
+      </div>
+      <div class="skill-content">
+        <h3>PHP</h3>
+        <p>
+          学習途中であります。 <br>
+          基礎学習を終え、今後もっと深く学習し、アウトプットを通して身に着けていきます。
+        </p>
+      </div>
+      <div class="skill-content">
+        <h3>DESIGN</h3>
+        <p>
+          デザインに関しましては少々苦手としておりますので、細かくヒアリングさせていただきます。 <br>
+          ご依頼いただく際、ある程度の構想をお持ち頂けますと幸いです。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="question" id="question">
+    <h2>Q&A</h2>
+    <p>クリックしてご覧ください</p>
+      <ul class="q">
+        <li><a>Q:納期はどれくらい？</a></li>
+        <li class="answer"><a>A:</a></li>
+      </ul>
+      <ul class="q">
+        <li><a>Q:価格は？</a></li>
+        <li class="answer"><a>A:</a></li>
+      </ul>
+      <ul class="q">
+        <li><a>Q:クオリティーは？</a><li>
+        <li class="answer"><a>A:</a></li>
+      </ul>
+      <ul class="q">
+        <li><a>Q:継続以来は可能？</a></li>
+        <li class="answer"><a>A:</a></li>
+      </ul>
+  </div>
+  <div class="contact" id="contact">
+    <h2>CONTACT</h2>
+    <p>お問い合わせ</p>
+    <form action="index.html" method="post">
+      <dl>
+        <dt><label><span>必須</span>お名前 </label></dt>
+        <dd><input type="text" name="" required placeholder="例）山田太郎"> </dd>
+        <dt><label><span>必須</span>メールアドレス </label></dt>
+        <dd><input type="email" name=""  required> </dd>
+        <dt><label><span class="yourself">任意</span> お問い合わせ内容</label></dt>
+        <dd><textarea name="" placeholder="お問い合わせ内容をご記入ください"></textarea> </dd>
+      </dl>
+      <button type="submit">送信</button>
+    </form>
+  </div>
+  <footer>
+    <div class="icon">
+        <i class="fab fa-facebook-f fa-2x"></i>
+        <i class="fab fa-instagram fa-2x"></i>
+        <i class="fab fa-twitter fa-2x"></i>
+    </div>
+    <p>© 2020 PORTFOLIO</p>
+
+  </footer>
+</body>
+</html>
