@@ -29,5 +29,19 @@ $(function(){
       $answer.addClass('open');
     };
   });
+  $(window).scroll(function(){
+    let windowHeight = $(window).height();
+    let windowSeventyPer = windowHeight * 0.7;
+    let scrollPosition = $('.skill-content').offset().top;
+    scrollPosition -= windowSeventyPer;
+    let windowPosition = $(this).scrollTop();
+    if(scrollPosition <= windowPosition){
+      $('.skill-content').addClass('amimate');
+    };
+  });
+  $('.top-animate-btn').click(function(){
+    $(this).css('display','none');
+    $('.top').find('p').addClass('top-animate');
+  })
 
 });

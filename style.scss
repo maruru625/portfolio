@@ -9,7 +9,31 @@ a{
 body{
   color: #333;
   padding-top: 80px;
-
+}
+@mixin subtitle{
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-family: "EB Garamond";
+}
+@mixin subtitleText{
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Noto Serif JP', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+@keyframes topAnimation {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 header{
   height:95px;
@@ -37,7 +61,7 @@ header{
       justify-content: space-between;
       align-items: center;
       width:50%;
-      @media screen and (max-width: 600px){
+      @media screen and (max-width: 599px){
         display:none;
       }
       .scroll-btn{
@@ -64,7 +88,7 @@ header{
     }
     >a{
       display:none;
-      @media screen and (max-width: 600px){
+      @media screen and (max-width: 599px){
         display:block;
       }
     }
@@ -95,22 +119,75 @@ header{
   background-position: center;
   width:100%;
   height:70vh;
+  .mask{
+    width:100%;
+    height:100%;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.7);
+    position: relative;
+    p{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      font-family: 'Noto Serif JP', sans-serif;
+      opacity: 0;
+      white-space: nowrap;
+      @media screen and (max-width: 1023px){
+        font-size: 30px;
+      }
+      @media screen and (max-width: 599px){
+        font-size: 20px;
+      }
+      &.top-animate{
+        @for $i from 1 through 5{
+          &:nth-of-type(#{$i}){
+            $i : $i - 1;
+            $i : $i * 2;
+            animation: topAnimation 2s #{$i}s linear;
+          }
+        }
+      }
+      &:last-of-type{
+        transition: 1s;
+        transition-delay: 11s;
+        font-size: 60px;
+        @media screen and (max-width: 1023px){
+          font-size: 40px;
+        }
+        @media screen and (max-width: 599px){
+          font-size: 30px;
+        }
+        &.top-animate{
+          opacity: 1;
+          font-family: "EB Garamond";
+        }
+      }
+    }
+    button{
+      display:block;
+      position: absolute;
+      top:85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width:180px;
+      height:30px;
+      background-color: #ccffff;
+      border-radius: 5px;
+      z-index: 3;
+      font-family: "EB Garamond";
+      font-size: 20px;
+    }
+  }
 }
 .about{
   padding:70px 0;
   h2{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 1.5px;
-    font-family: "EB Garamond";
+    @include subtitle;
   }
   >p{
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Noto Serif JP', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 70px;
+    @include subtitleText;
   }
   .profile{
     width:60%;
@@ -118,7 +195,7 @@ header{
     margin: 0 auto;
     display:flex;
     align-items: center;
-    @media screen and (max-width:600px){
+    @media screen and (max-width:1023px){
       flex-direction: column;
       justify-content: center;
     }
@@ -129,7 +206,7 @@ header{
       width:100px;
       height:100px;
       margin-right: 3%;
-      @media screen and(max-width:600px){
+      @media screen and(max-width:1023px){
         margin-right: 0;
         margin-bottom: 20px;
       }
@@ -144,18 +221,10 @@ header{
 .skill{
   padding: 70px 0;
   h2{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 1.5px;
-    font-family: "EB Garamond";
+    @include subtitle;
   }
   >p{
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Noto Serif JP', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 70px;
+    @include subtitleText;
   }
   .skills{
     margin: 0 auto;
@@ -168,11 +237,20 @@ header{
       padding: 7px 14px;
       border-radius: 10px;
       border:1px solid #333;
+      opacity: 0;
+      transform:translateY(20px);
+      transition: 1s;
+      @for $i from 1 through 4{
+        &:nth-of-type(#{$i}){
+          $i : $i - 1;
+          transition-delay: #{$i}s;
+        }
+      }
       @media screen and (max-width: 1024px){
         width:40%;
         margin-bottom: 30px;
       }
-      @media screen and (max-width: 600px){
+      @media screen and (max-width: 599px){
         width: 80%;
       }
       h3{
@@ -191,24 +269,20 @@ header{
         line-height: 24px;
         font-family: 'Noto Serif JP', sans-serif;
       }
+      &.amimate{
+        opacity: 1;
+        transform: none;
+      }
     }
   }
 }
 .question{
   padding: 70px 0;
   h2{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 1.5px;
-    font-family: "EB Garamond";
+    @include subtitle;
   }
   p{
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Noto Serif JP', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 70px;
+    @include subtitleText;
   }
 
   ul{
@@ -234,18 +308,10 @@ header{
   height:100%;
 
   h2{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 1.5px;
-    font-family: "EB Garamond";
+    @include subtitle;
   }
   >p{
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Noto Serif JP', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 70px;
+    @include subtitleText;
   }
   form{
     width:80%;
@@ -278,11 +344,9 @@ header{
         input{
           font-size:16px;
           width:100%;
-
         }
         textarea{
           width:100%;
-
           height:100px;
           font-size: 16px;
         }
@@ -297,11 +361,8 @@ header{
       width:50px;
       height:30px;
       font-family: 'Noto Serif JP', sans-serif;
-
     }
-
   }
-
 }
 footer{
   padding:10vh 0;
